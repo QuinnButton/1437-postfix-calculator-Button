@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        IntStack s = new IntStack();
+        DoubleStack s = new DoubleStack();
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Enter postfix expression: ");
         String expr = keyboard.nextLine();
@@ -26,14 +26,14 @@ public class Main {
                 }                
             } else {
                 try {
-                    s.push(Integer.parseInt(part));
+                    s.push(Integer.parseDouble(part));
                 } catch(RuntimeException e) {
                     System.out.println("Malformed expression");
                 }
             }
         }
         // Here, hthe result should be at the top of the stack.
-        int result = s.pop();
+        Double result = s.pop();
         System.out.println("The result is " + result);
     }
 
